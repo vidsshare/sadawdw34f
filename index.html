@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<html lang='id'>
+
+<head>
+
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+
+<title>Cinema Spot</title>
+
+<style id='page-skin-1' type='text/css'>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+background:#050505;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+overflow-x:hidden;
+color:#fff;
+}
+
+/* BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top,#ff005522,transparent 35%),
+radial-gradient(circle at bottom,#0055ff22,transparent 35%);
+z-index:-1;
+}
+
+/* PAGE */
+
+.page{
+width:100%;
+max-width:480px;
+margin:auto;
+min-height:100vh;
+padding-bottom:50px;
+}
+
+/* HEADER */
+
+.header{
+padding:18px;
+}
+
+.logo{
+font-size:24px;
+font-weight:800;
+letter-spacing:1px;
+}
+
+.logo span{
+color:#ff2f6d;
+}
+
+.sub{
+margin-top:6px;
+color:#999;
+font-size:13px;
+}
+
+/* VIDEO CARD */
+
+.video-card{
+margin:12px;
+background:#111;
+border-radius:24px;
+overflow:hidden;
+box-shadow:
+0 0 0 1px rgba(255,255,255,0.05),
+0 20px 40px rgba(0,0,0,0.45);
+}
+
+/* VIDEO */
+
+.video-box{
+position:relative;
+background:#000;
+min-height:250px;
+}
+
+video{
+width:100%;
+max-height:75vh;
+display:block;
+object-fit:contain;
+background:#000;
+}
+
+.video-box::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+height:120px;
+background:linear-gradient(to top,#000000dd,transparent);
+pointer-events:none;
+}
+
+/* VIDEO LOADER */
+
+#videoLoader{
+position:absolute;
+inset:0;
+background:#000;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:15px;
+font-weight:600;
+letter-spacing:0.5px;
+z-index:10;
+}
+
+/* BADGE */
+
+.badge{
+position:absolute;
+top:12px;
+left:12px;
+background:#ff2f6d;
+padding:8px 12px;
+border-radius:50px;
+font-size:12px;
+font-weight:700;
+z-index:5;
+box-shadow:0 5px 15px rgba(255,0,102,0.4);
+}
+
+/* INFO */
+
+.video-info{
+padding:16px;
+}
+
+.video-title{
+font-size:20px;
+font-weight:700;
+line-height:1.4;
+}
+
+.video-desc{
+margin-top:10px;
+color:#aaa;
+font-size:14px;
+line-height:1.6;
+}
+
+.stats{
+display:flex;
+gap:14px;
+margin-top:14px;
+color:#ccc;
+font-size:13px;
+flex-wrap:wrap;
+}
+
+/* SECTION */
+
+.section-title{
+padding:18px 16px 10px;
+font-size:18px;
+font-weight:700;
+}
+
+/* ADS */
+
+.ads-card{
+margin:12px;
+background:#121212;
+border-radius:20px;
+padding:14px;
+border:1px solid rgba(255,255,255,0.05);
+overflow:hidden;
+}
+
+.ads-label{
+color:#777;
+font-size:11px;
+text-transform:uppercase;
+margin-bottom:12px;
+letter-spacing:1px;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+color:#666;
+font-size:12px;
+padding:30px 15px;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.video-title{
+font-size:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class='page'>
+
+<!-- HEADER -->
+
+<div class='header'>
+
+<div class='logo'>
+Daily Viral <span>Hubs</span>
+</div>
+
+<div class='sub'>
+🎬 Watch the Latest Viral Videos Every Day 🔥
+</div>
+
+</div>
+
+
+<!-- VIDEO CARD -->
+
+<div class='video-card'>
+
+<div class='video-box'>
+
+<!-- LAYAR LOADING -->
+
+<div id='videoLoader'>
+Video load in 1 second...
+</div>
+
+
+<video
+controls='controls'
+controlsList='nodownload noremoteplayback'
+disablePictureInPicture='disablePictureInPicture'
+id='player'
+muted='muted'
+playsinline='playsinline'
+poster='https://via.placeholder.com/480x720?text=Loading...'
+preload='metadata'
+>
+
+<source
+id='videoSource'
+src=''
+type='video/mp4'>
+</source>
+
+</video>
+
+</div>
+
+
+<div class='video-info'>
+
+<div class='video-title'>
+🎥 Hottest Viral Videos Today‼️
+</div>
+
+<div class='video-desc'>
+Discover the latest viral content people are talking about right now.
+</div>
+
+<div class='stats'>
+
+<div>
+👁 7.3M Views
+</div>
+
+<div>
+&#10084;&#65039; 591K Likes
+</div>
+
+<div>
+🔥 Trending
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TRENDING -->
+
+<div class='section-title'>
+🔥 Trending Videos
+</div>
+
+
+<!-- NATIVE BANNER -->
+
+<div class='ads-card'>
+
+<div class='ads-label'>
+<center>Advertisement</center>
+</div>
+
+<div style='text-align:center;'>
+
+<script
+data-cfasync="false"
+async
+type="text/javascript"
+src="//qw.rolledipocras.com/tiTtAiKEeLuZ/151239">
+</script>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<div class='footer'>
+
+&#169; 2026 Viral Media &#8226; All Rights Reserved
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT UTAMA
+===================================================== -->
+
+<script type='text/javascript'>
+
+(function () {
+
+
+/* =========================
+   IMPRESSION TAGGING
+========================= */
+
+const impressionSeen = new Set();
+
+
+function tagImpression(name, element){
+
+if(!element || impressionSeen.has(name)){
+return;
+}
+
+impressionSeen.add(name);
+
+
+/* Local impression tracking */
+
+try{
+
+const key = "nextwatch_impressions";
+
+const data = JSON.parse(
+localStorage.getItem(key) || "[]"
+);
+
+data.push({
+
+event:name,
+
+time:new Date().toISOString(),
+
+page:location.href
+
+});
+
+localStorage.setItem(
+key,
+JSON.stringify(data.slice(-100))
+);
+
+}catch(e){}
+
+
+/* Tandai element */
+
+element.setAttribute(
+"data-impression-tagged",
+"true"
+);
+
+}
+
+
+/* =========================
+   PAGE IMPRESSION
+========================= */
+
+tagImpression(
+"page_impression",
+document.body
+);
+
+
+/* =========================
+   VIDEO & ADS
+========================= */
+
+const videoCard =
+document.querySelector(".video-card");
+
+const adCard =
+document.querySelector(".ads-card");
+
+
+/* =========================
+   INTERSECTION OBSERVER
+========================= */
+
+if("IntersectionObserver" in window){
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(
+!entry.isIntersecting ||
+entry.intersectionRatio < 0.25
+){
+
+return;
+
+}
+
+
+/* VIDEO IMPRESSION */
+
+if(entry.target === videoCard){
+
+tagImpression(
+"video_impression",
+entry.target
+);
+
+}
+
+
+/* NATIVE BANNER IMPRESSION */
+
+if(entry.target === adCard){
+
+tagImpression(
+"native_banner_impression",
+entry.target
+);
+
+}
+
+
+/* Stop observing setelah impression */
+
+observer.unobserve(
+entry.target
+);
+
+});
+
+},
+
+{
+threshold:[0.25]
+}
+
+);
+
+
+/* Observe video */
+
+if(videoCard){
+
+observer.observe(
+videoCard
+);
+
+}
+
+
+/* Observe native banner */
+
+if(adCard){
+
+observer.observe(
+adCard
+);
+
+}
+
+
+}else{
+
+
+/* Browser fallback */
+
+tagImpression(
+"video_impression",
+videoCard
+);
+
+tagImpression(
+"native_banner_impression",
+adCard
+);
+
+}
+
+
+/* =========================
+   SMARTLINK
+========================= */
+
+const smartlink =
+"https://www.facebook.com/janoub.lebnan/";
+
+
+/* =========================
+   VIDEO PARAMETER
+========================= */
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+let video =
+params.get("v");
+
+
+/* Default video */
+
+if(!video){
+
+video =
+"93zgOClX1";
+
+}
+
+
+/* Tambahkan CDN Videy */
+
+if(!video.startsWith("http")){
+
+video =
+"https://cdn.videy.co/" + video;
+
+}
+
+
+/* Tambahkan extension MP4 */
+
+if(!video.endsWith(".mp4")){
+
+video += ".mp4";
+
+}
+
+
+/* =========================
+   VIDEO ELEMENT
+========================= */
+
+const player =
+document.getElementById("player");
+
+const source =
+document.getElementById("videoSource");
+
+const loader =
+document.getElementById("videoLoader");
+
+
+/* Masukkan URL video */
+
+source.src =
+video;
+
+
+/* Load video */
+
+player.load();
+
+
+/* =========================
+   LOADING 1 DETIK
+========================= */
+
+setTimeout(function(){
+
+
+/* Hilangkan loading */
+
+loader.style.display =
+"none";
+
+
+/* Play video */
+
+player.play().catch(
+()=>{}
+);
+
+
+},1000);
+
+
+/* =========================
+   DISABLE RIGHT CLICK
+========================= */
+
+player.addEventListener(
+"contextmenu",
+e=>e.preventDefault()
+);
+
+
+})();
+
+</script>
+
+
+<!-- =====================================================
+     HISTATS
+     DITEMPATKAN DI LUAR SCRIPT UTAMA
+===================================================== -->
+
+<div id="histats_counter"></div>
+
+<script type="text/javascript">
+
+var _Hasync = _Hasync || [];
+
+
+_Hasync.push([
+'Histats.start',
+'1,5054566,4,9,110,60,00011111'
+]);
+
+
+_Hasync.push([
+'Histats.fasi',
+'1'
+]);
+
+
+_Hasync.push([
+'Histats.track_hits',
+''
+]);
+
+
+(function(){
+
+var hs =
+document.createElement('script');
+
+hs.type =
+'text/javascript';
+
+hs.async =
+true;
+
+hs.src =
+'//s10.histats.com/js15_as.js';
+
+
+(
+document.getElementsByTagName('head')[0] ||
+document.getElementsByTagName('body')[0]
+).appendChild(hs);
+
+})();
+
+</script>
+
+
+<noscript>
+
+<a href="/" target="_blank">
+
+<img
+src="//sstatic1.histats.com/0.gif?5054566&101"
+alt="counter create hit"
+border="0">
+
+</a>
+
+</noscript>
+
+
+<!-- =====================================================
+     END HISTATS
+===================================================== -->
+
+
+</body>
+
+</html>
